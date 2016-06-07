@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+</head>
+<script>
+    function getResult(){
+        
+    var score = 0;
+    var total = 5;
+    var answer = [ "b" , "a" , "b", "c" , "a"]
+    var q1 = document.forms["quiz"]["q1"].value;
+    var q2 = document.forms["quiz"]["q2"].value;
+    var q3 = document.forms["quiz"]["q3"].value;
+    var q4 = document.forms["quiz"]["q4"].value;
+    var q5 = document.forms["quiz"]["q5"].value;
+        
+        
+        for( i = 1; i <= total; i++ ){
+        if (eval("q"+i) == null || eval("q"+i) == "" ){
+                alert("You missed Question number " + i );
+                return false;
+            }};
+
+        
+        for( i = 1; i <= total; i++ ){
+             if (eval("q"+i) == answer[i -1]){
+                score ++;
+            }
+        }
+        
+        alert("you have scored " + score + " out of " + total);
+        
+    
+    
+    }
+</script>
+<style>
+    body{
+        background-color: orange;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    form{
+        padding: 50px;
+        width: 600px;
+        margin: 0 auto;
+        position: relative;
+        display: table;
+        border: 1px solid;
+        border-color: aqua;
+        background-color: aquamarine;
+    }
+    input{
+        margin-bottom: 7px;
+    }
+    
+</style>
+<body>
+
+<form name="quiz" id="quiz1" onsubmit="getResult()">
+    <h1>Simple general knowledge quiz</h1>
+    <h2>Which is the heavier metal of these?</h2>
+    <input type="radio" name="q1" id="q1a" value="a"/> a. Silver<br>
+    <input type="radio" name="q1" id="q1b" value="b"/> b. Gold<br>
+    
+    <h2>Which is the most common non-contagious disease in the world?</h2>
+    <input type="radio" name="q2" id="q2a" value="a"/> a. Tooth Decay<br>
+    <input type="radio" name="q2" id="q2b" value="b"/> b. Cold<br>
+    
+    <h2>Which is the coldest location in the earth? </h2>
+    <input type="radio" name="q3" id="q3a" value="a"/> a. Kashmir<br>
+    <input type="radio" name="q3" id="q3b" value="b"/> b. Antarctica <br>
+    <input type="radio" name="q3" id="q3b" value="c"/> c. Kalewadi <br>
+    <input type="radio" name="q3" id="q3b" value="d"/> d. Andheri <br>
+    
+    <h2>Which is the animal referred as the ship of the desert? </h2>
+    <input type="radio" name="q4" id="q4a" value="a"/> a. Goat<br>
+    <input type="radio" name="q4" id="q4b" value="b"/> b. Lion<br>
+    <input type="radio" name="q4" id="q4c" value="c"/> c. Camel<br>
+    
+    <h2>Which is the nearest star to planet earth?  </h2>
+    <input type="radio" name="q5" id="q5a" value="a"/> a. Sun<br>
+    <input type="radio" name="q5" id="q5b" value="b"/> b. Moon<br>
+    <input type="radio" name="q5" id="q5c" value="c"/> c. Mars<br><br>
+    <button type="submit">Submit</button>
+    
+</form>
+</body>
+</html>
